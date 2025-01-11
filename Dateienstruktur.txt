@@ -1,0 +1,15 @@
+Root
+- app
+	-(tabs)
+	-Projects
+-assets
+	-Fonts
+	-Images
+-components
+	-box
+	-button
+	-gluestack
+	-Image
+	-pressable
+	-text 
+
