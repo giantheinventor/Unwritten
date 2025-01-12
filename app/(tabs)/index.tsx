@@ -2,7 +2,6 @@ import { Text, View, StyleSheet, Platform } from "react-native";
 import ProjectList from "../projects/projectList";
 import { Fab, FabIcon, FabLabel } from "@/components/ui/fab";
 import { Ionicons } from "@expo/vector-icons";
-import { AddIcon } from "@/components/ui/icon";
 import { Box } from "@/components/ui/box";
 import { useFonts } from "expo-font";
 

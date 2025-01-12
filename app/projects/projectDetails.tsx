@@ -30,7 +30,10 @@ export default function ProjectList() {
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
-        <Button onPress={returnButtonHandler}>
+        <Button
+          onPress={returnButtonHandler}
+          style={{ justifyContent: "center", alignContent: "center" }}
+        >
           <Ionicons name="chevron-back" size={24} color="black" />
         </Button>
         <Text style={styles.title}>Project</Text>
@@ -81,7 +84,6 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
   },
   title: {
-    alignSelf: "center",
     fontSize: 40,
     fontWeight: "bold",
     margin: 16,
