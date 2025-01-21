@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { FlatList } from "react-native";
 import { Box } from "@/components/ui/box";
 import { Button } from "@/components/ui/button";
 import { Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
+import ProjectListInterface from "@/data-interface/project-interface";
 
-export default function ProjectList() {
+type ProjectIDs = {
+  projectID: number; // Typ für projectId
+};
+
+const ProjectDetails: React.FC<ProjectIDs> = (projectID) => {
   const router = useRouter();
   const projects = [
     { id: 1, title: "First Item", color: "black" },
@@ -24,7 +29,11 @@ export default function ProjectList() {
   };
 
   const returnButtonHandler = () => {
-    router.push("/");
+    router.push("../projectList/");
+  };
+
+  const boxPress = () => {
+    console.log("Box pressed");
   };
 
   return (
@@ -42,9 +51,9 @@ export default function ProjectList() {
         <FlatList
           data={projects}
           renderItem={({ item }) => (
-            <Box style={styles.box}>
+            <Pressable onPress={boxPress} style={styles.box}>
               <Text style={styles.text}>{item.title}</Text>
-            </Box>
+            </Pressable>
           )}
           keyExtractor={(item) => item.id.toString()}
           horizontal={true} // Aktiviert die horizontale Anzeige
@@ -57,7 +66,7 @@ export default function ProjectList() {
       </Button>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -113,3 +122,5 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
 });
+
+export default ProjectDetails;

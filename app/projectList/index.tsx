@@ -1,12 +1,13 @@
 import { Text, View, StyleSheet, Platform } from "react-native";
-import ProjectList from "../projects/projectList";
+import ProjectList from "./projectList";
+import React from "react";
 import { Fab, FabIcon, FabLabel } from "@/components/ui/fab";
 import { Ionicons } from "@expo/vector-icons";
 import { Box } from "@/components/ui/box";
 import { useFonts } from "expo-font";
 
 export default function app() {
-  const fabPressHandle = () => {
+  const fabPressHandle = async () => {
     console.log("FAB pressed");
   };
 
